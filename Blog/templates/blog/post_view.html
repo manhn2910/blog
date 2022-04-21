@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="col-md-8 offset-md-2">
+    <h1>{{ post.title }}</h1>
+    <small>
+        {{ post.created_on.date }} | &nbsp;
+        Categories:&nbsp;
+        {% for category in post.categories.all %}
+        <a href="{% url 'category_view' category.id %}">
+            {{ category.name }}
+        </a>&nbsp;
+        {% endfor %}
+        Author:&nbsp;<a href="{% url 'post_listing' %}">
+            {{ post.author.username }}
+        </a>| &nbsp; 
+        <form class="row" action="{% url 'like_post' post.pk %}" method='post'>
+          {% csrf_token %}
+          {% if user in post.liked_by.all %}
+          <button type='submit', name="post_id", value="{{ post.id }}", class="btn btn-primary btn-sm">Dislike</button>
+          {% else %}
+          <button type='submit', name="post_id", value="{{ post.id }}", class="btn btn-primary btn-sm">Like</button>
+          {% endif %}
+          
+          &nbsp;
+          <a>{{ post.liked_by.all.count }}</a>
+        </form>
+    </small>
+    <p>{{ post.content | linebreaks }}</p>
+    <h3>Leave a comment:</h3>
+    <form action="/post/{{ post.pk }}/" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.author }}
+        </div>
+        <div class="form-group">
+            {{ form.body }}
+        </div>
+        <button type="submit" class="btn-primary">Submit</button>
+    </form>
+    <h3>Comments:</h3>
+    {% for comment in comments %}
+    <p>
+        On {{ comment.created_on.date }}&nbsp;
+        <b>{{ comment.user}}</b> wrote:
+    </p>
+    <p>{{ comment.content }}</p>
+    <hr>
+    {% endfor %}
+</div>
+{% endblock content %}

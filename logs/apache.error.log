@@ -1,0 +1,25 @@
+The 'Apache2.4' service is restarting.
+The 'Apache2.4' service has restarted.
+winnt:notice] [pid 14636:tid 308] AH00455: Apache/2.4.53 (Win64) mod_wsgi/4.9.0 Python/3.10 configured -- resuming normal operations
+[Wed Apr 20 23:11:37.920678 2022] [mpm_winnt:notice] [pid 14636:tid 308] AH00456: Apache Lounge VS16 Server built: Mar 16 2022 11:26:15
+[Wed Apr 20 23:11:37.920678 2022] [core:notice] [pid 14636:tid 308] AH00094: Command line: 'c:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Wed Apr 20 23:11:37.923679 2022] [mpm_winnt:notice] [pid 14636:tid 308] AH00418: Parent: Created child process 24512
+[Wed Apr 20 23:11:38.915004 2022] [mpm_winnt:notice] [pid 24512:tid 324] AH00354: Child: Starting 64 worker threads.
+The 'Apache2.4' service is restarting.
+[Wed Apr 20 23:12:30.130009 2022] [mpm_winnt:notice] [pid 14636:tid 308] AH00424: Parent: Received restart signal -- Restarting the server.
+[Wed Apr 20 23:12:30.156840 2022] [mpm_winnt:notice] [pid 14636:tid 308] AH00455: Apache/2.4.53 (Win64) mod_wsgi/4.9.0 Python/3.10 configured -- resuming normal operations
+[Wed Apr 20 23:12:30.156840 2022] [mpm_winnt:notice] [pid 14636:tid 308] AH00456: Apache Lounge VS16 Server built: Mar 16 2022 11:26:15
+[Wed Apr 20 23:12:30.156840 2022] [core:notice] [pid 14636:tid 308] AH00094: Command line: 'c:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Wed Apr 20 23:12:30.159840 2022] [mpm_winnt:notice] [pid 14636:tid 308] AH00418: Parent: Created child process 26092
+[Wed Apr 20 23:12:31.139009 2022] [mpm_winnt:notice] [pid 26092:tid 324] AH00354: Child: Starting 64 worker threads.
+[Wed Apr 20 23:12:32.141490 2022] [mpm_winnt:notice] [pid 24512:tid 324] AH00364: Child: All worker threads have exited.
+[Thu Apr 21 10:30:02.815404 2022] [mpm_winnt:notice] [pid 14636:tid 308] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Thu Apr 21 10:30:04.844976 2022] [mpm_winnt:notice] [pid 26092:tid 324] AH00364: Child: All worker threads have exited.
+[Thu Apr 21 10:30:04.877519 2022] [mpm_winnt:notice] [pid 14636:tid 308] AH00430: Parent: Child process 26092 exited successfully.
+Starting the 'Apache2.4' service
+The 'Apache2.4' service is running.
+pm_winnt:notice] [pid 18104:tid 308] AH00455: Apache/2.4.53 (Win64) mod_wsgi/4.9.0 Python/3.10 configured -- resuming normal operations
+[Thu Apr 21 10:30:08.636738 2022] [mpm_winnt:notice] [pid 18104:tid 308] AH00456: Apache Lounge VS16 Server built: Mar 16 2022 11:26:15
+[Thu Apr 21 10:30:08.636738 2022] [core:notice] [pid 18104:tid 308] AH00094: Command line: 'c:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Thu Apr 21 10:30:08.636738 2022] [mpm_winnt:notice] [pid 18104:tid 308] AH00418: Parent: Created child process 13976
+[Thu Apr 21 10:30:09.171749 2022] [mpm_winnt:notice] [pid 13976:tid 324] AH00354: Child: Starting 64 worker threads.

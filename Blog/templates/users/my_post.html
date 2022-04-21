@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="col-md-8 offset-md-2">
+    <button type="submit" class="btn-primary">Add new post</button>
+    <hr>
+    {% for post in posts %}
+    <h2><a href="{% url 'post_view' post.id %}">{{ post.title }}</a></h2>
+    <small>
+        {{ post.created_on.date }} | &nbsp;
+        Categories: &nbsp;
+        {% for category in post.categories.all %}
+        <a href="{% url 'category_view' category.id %}">
+            {{ category.name }}
+        </a>&nbsp;
+        {% endfor %}
+    </small>
+    <p>{{ post.content | slice:":400" }}...</p>
+    {% endfor %}
+</div>
+{% endblock content %}

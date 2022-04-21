@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>First Blog</h1>
+
+{% if messages %}
+<ul class="messages" style="background-color:#ccc">
+  {% for message in messages %}
+    <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+      {{ message }}
+    </li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+<div class="col-md-8 offset-md-2">
+    <hr>
+    {% for post in posts %}
+    <h2><a href="{% url 'post_view' post.id %}">{{ post.title }}</a></h2>
+    <small>
+        {{ post.created_on.date }} | &nbsp;
+        Categories: &nbsp;
+        {% for category in post.categories.all %}
+        <a href="{% url 'category_view' category.id %}">
+            {{ category.name }}
+        </a>&nbsp;
+        {% endfor %}
+        <br>
+        Author:&nbsp;<a href="{% url 'post_listing' %}">
+          {{ post.author.username }} 
+        </a>
+    </small>
+    <p>{{ post.content | slice:":400" }}...</p>
+    {% endfor %}
+</div>
+{% endblock content %}
